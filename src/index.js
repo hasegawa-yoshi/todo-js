@@ -25,6 +25,8 @@ const onClickAdd = () => {
   deleteButton.innerText = "削除";
   deleteButton.addEventListener("click", () => {
     //押された削除ボタンの親要素divを未完了リストから削除
+    const deleteTarget = deleteButton.parentNode;
+    document.getElementById("incomplete-list").removeChild(deleteTarget);
   });
 
   //divの子要素に各要素を配置
