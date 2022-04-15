@@ -17,7 +17,21 @@ const onClickAdd = () => {
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
-    alert("完了");
+    document.getElementById("complete-list").appendChild(div);
+    div.removeChild(completeButton);
+    div.removeChild(deleteButton);
+    //戻すボタン作成
+    const returnButton = document.createElement("button");
+    returnButton.innerText = "戻す";
+    div.appendChild(returnButton);
+    //戻すボタンで未完了リストに追加する
+    returnButton.addEventListener("click", () => {
+      document.getElementById("incomplete-list").appendChild(div);
+      div.removeChild(returnButton);
+      //完了、削除ボタン作成
+      div.appendChild(completeButton);
+      div.appendChild(deleteButton);
+    });
   });
 
   //button(削除)作成
