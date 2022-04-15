@@ -13,8 +13,24 @@ const onClickAdd = () => {
   const li = document.createElement("li");
   li.innerText = inputText;
 
-  //divの子要素にliを配置
+  //button(完了)作成
+  const completeButton = document.createElement("button");
+  completeButton.innerText = "完了";
+  completeButton.addEventListener("click", () => {
+    alert("完了");
+  });
+
+  //button(削除)作成
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", () => {
+    //押された削除ボタンの親要素divを未完了リストから削除
+  });
+
+  //divの子要素に各要素を配置
   div.appendChild(li);
+  div.appendChild(completeButton);
+  div.appendChild(deleteButton);
 
   //未完了リストに追加
   document.getElementById("incomplete-list").appendChild(div);
